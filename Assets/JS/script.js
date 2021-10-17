@@ -1,15 +1,12 @@
 // create variables
 
 //functions
-//create a function which shows current day at the top of page
-// use moment.js
-// get current day
-// render current day
+// use moment.js to render current day
+
 $("#currentDay").text(moment().format("dddd MMMM Do YYYY"));
 console.log("#currentDay");
 
-//create a time block which is color coded depending on past, present, future
-// create a function with an if statement
+//function which colour codes time depending on past, present, future
 function timeColour() {
   var hour = moment().hours();
 
@@ -29,8 +26,6 @@ function timeColour() {
 console.log(timeColour);
 
 //page is refreshed and all the events are cleared
-//create an event listener for refresh button which clears localStorage
-
 function refreshTimeBlocks() {
   $(".hour").each(function () {
     var currentHour = $(this).text();
@@ -43,7 +38,11 @@ function refreshTimeBlocks() {
 }
 console.log(refreshTimeBlocks);
 
-//create a function when click on time block and being able to enter event
-
 // save button is clicked, then data is saved to localStorage
-//create an event listener for save button which saves to localStorage
+saveButton.on("click", function () {
+  var time = $(this).siblings(".hour").text();
+  var plan = $(this).siblings(".content").val();
+  localStorage.setItem(time, content);
+});
+
+console.log(saveButton);
