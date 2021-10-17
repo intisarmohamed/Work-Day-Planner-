@@ -16,8 +16,6 @@ function timeColour() {
   $(".time-block").each(function () {
     var currentHour = parseInt($(this).attr("id"));
 
-    // console.log(this); //each time-block
-
     if (currentHour > hour) {
       $(this).addClass("future");
     } else if (currentHour === hour) {
@@ -28,12 +26,24 @@ function timeColour() {
   });
 }
 
-console.log("timeColour");
+console.log(timeColour);
+
+//page is refreshed and all the events are cleared
+//create an event listener for refresh button which clears localStorage
+
+function refreshTimeBlocks() {
+  $(".hour").each(function () {
+    var currentHour = $(this).text();
+    var currentBlock = localStorage.getItem(currentHour);
+
+    if (currentBlock !== null) {
+      $(this).siblings(".content").val(currentHour);
+    }
+  });
+}
+console.log(refreshTimeBlocks);
 
 //create a function when click on time block and being able to enter event
 
 // save button is clicked, then data is saved to localStorage
 //create an event listener for save button which saves to localStorage
-
-//page is refreshed and all the events are cleared
-//create an event listener for refresh button which clears localStorage
