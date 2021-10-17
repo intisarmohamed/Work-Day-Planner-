@@ -10,6 +10,25 @@ console.log("#currentDay");
 
 //create a time block which is color coded depending on past, present, future
 // create a function with an if statement
+function timeColour() {
+  var hour = moment().hours();
+
+  $(".time-block").each(function () {
+    var currentHour = parseInt($(this).attr("id"));
+
+    // console.log(this); //each time-block
+
+    if (currentHour > hour) {
+      $(this).addClass("future");
+    } else if (currentHour === hour) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("past");
+    }
+  });
+}
+
+console.log("timeColour");
 
 //create a function when click on time block and being able to enter event
 
