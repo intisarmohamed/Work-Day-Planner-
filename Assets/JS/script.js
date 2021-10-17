@@ -45,3 +45,6 @@ saveButton.on("click", function () {
 });
 
 console.log(saveButton);
+
+timeColour();
+saveButton();
