@@ -1,6 +1,3 @@
-// create variables
-
-//functions
 // use moment.js to render current day
 
 $("#currentDay").text(moment().format("dddd MMMM Do YYYY"));
@@ -38,6 +35,8 @@ function refreshTimeBlocks() {
 }
 console.log(refreshTimeBlocks);
 
+//declare saveButton var
+var saveButton = $(".saveBtn");
 // save button is clicked, then data is saved to localStorage
 saveButton.on("click", function () {
   var time = $(this).siblings(".hour").text();
