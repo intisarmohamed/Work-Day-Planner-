@@ -1,6 +1,8 @@
 # Work-Day-Planner-
 
 ### Deployed Links
+https://intisarmohamed.github.io/Work-Day-Planner-/
+
 
 ### Overview
 
@@ -25,3 +27,4 @@ A simple calendar application that allows a user to save events for each hour of
 - WHEN I refresh the page THEN the saved events persist
 
 ### Screenshots
+![Alt text](Assets/screenshots/screencapture-github-intisarmohamed-Work-Day-Planner-blob-dev-Assets-JS-script-js-2021-10-17-21_06_57.png)
