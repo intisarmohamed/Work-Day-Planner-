@@ -45,4 +45,4 @@ THEN the saved events persist
 
 ### Screenshots
 
-![Alt text](assets/screenshots/screenshot.png);
+![Alt text](Assets/screenshots/screenshot.png);
