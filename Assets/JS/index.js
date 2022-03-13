@@ -7,7 +7,7 @@ function timeColour() {
   let hour = moment().hours();
 
   $(".time-block").each(function () {
-    let currentHour = parseInt($(this).attr("id"));
+    var currentHour = parseInt($(this).attr("id"));
 
     if (currentHour > hour) {
       $(this).addClass("future");
@@ -23,20 +23,23 @@ function timeColour() {
 function refreshTimeBlocks() {
   $(".hour").each(function () {
     var currentHour = $(this).text();
-    var currentBlock = localStorage.getItem(currentBlock);
+    var currentBlock = localStorage.getItem(currentHour);
 
     if (currentBlock !== null) {
-      $(this).siblings(".content").val(currentBlock);
+      $(this).siblings(".description").val(currentBlock);
     }
   });
 }
 
+//declare saveButton var
+var saveButton = $(".saveBtn");
 // save button is clicked, then data is saved to localStorage
-$(".saveBtn").on("click", function () {
+saveButton.on("click", function () {
   var time = $(this).siblings(".hour").text();
   var plan = $(this).siblings(".description").val();
-  localStorage.setItem(time, plan);
+  localStorage.setItem(time, content);
 });
 
 timeColour();
 saveButton();
+refreshTimeBlocks();
